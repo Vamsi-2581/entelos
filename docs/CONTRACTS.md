@@ -33,4 +33,4 @@ Applications supply source authority, independent expectations, admission/learni
 
 `prepare.py` does not read the fixture's descriptive metadata such as `kind`, `requirement`, `workflow_source` or `expected_cel_output_type`. Those fields do not affect the generated bundle.
 
-Fixed values must use the JSON type declared for their variable: a `bool` needs a JSON boolean and a `string` needs a JSON string. The host rejects null and does not coerce values, so `"false"` is not a boolean. Fixed strings are subject to the manifest's `max_string_bytes` limit. Caller and fixed names must be disjoint, and every declared variable must appear in one of those two sets.
+Fixed values must use the JSON type declared for their variable: a `bool` needs a JSON boolean and a `string` needs a JSON string. The host rejects null and does not coerce values, so `"false"` is not a boolean. Fixed strings are subject to the manifest's `max_string_utf8_bytes` limit, measured in UTF-8 bytes. Caller and fixed names must be disjoint, and every declared variable must appear in one of those two sets.
